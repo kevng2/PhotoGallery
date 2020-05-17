@@ -66,6 +66,7 @@ public class PhotoGalleryFragment extends Fragment {
     public void onDestroy() {
         super.onDestroy(); 
         mThumbnailDownloader.quit();
+        mThumbnailDownloader.clearQueue();
         Log.i(TAG, "Background thread destroyed");
     }
 
