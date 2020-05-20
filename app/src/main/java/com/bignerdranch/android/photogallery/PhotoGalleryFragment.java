@@ -17,13 +17,12 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.SearchView;
-import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PhotoGalleryFragment extends Fragment {
+public class PhotoGalleryFragment extends VisibleFragment {
     private RecyclerView mPhotoRecyclerView;
     private List<GalleryItem> mItems = new ArrayList<>();
     private static final String TAG = "PhotoGalleryFragment";

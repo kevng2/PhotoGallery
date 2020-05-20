@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.bignerdranch.android.photogallery">
-
+    <permission android:name="com.bignerdranch.android.photogallery.PRIVATE"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET"/>
     <application
@@ -25,6 +25,12 @@
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>
             </intent-filter>
         </receiver>
+        <receiver android:name=".NotificationReceiver" android:exported="false">
+            <intent-filter android:priority="-999">
+                <action android:name="com.bignerdranch.android.photogallery.SHOW_NOTIFICATION"/>
+            </intent-filter>
+        </receiver>
+
     </application>
 
 </manifest>
