@@ -95,8 +95,7 @@ public class FlickrFetchr {
         return uriBuilder.build().toString();
     }
 
-    private void parseItems(List<GalleryItem> items, JSONObject jsonBody) throws IOException,
-            JSONException {
+    private void parseItems(List<GalleryItem> items, JSONObject jsonBody) throws JSONException {
         JSONObject photosJsonObject = jsonBody.getJSONObject("photos");
         JSONArray photoJsonArray = photosJsonObject.getJSONArray("photo");
 
@@ -111,6 +110,7 @@ public class FlickrFetchr {
                 continue;
             }
             item.setUrl(photoJsonObject.getString("url_s"));
+            item.setOwner(photoJsonObject.getString("owner"));
             items.add(item);
         }
     }
